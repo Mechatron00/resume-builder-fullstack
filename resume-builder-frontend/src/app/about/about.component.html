@@ -1,0 +1,280 @@
+<div
+  id="intro"
+  class="p-5 text-center bg-image shadow-1-strong"
+  style="
+    background-image: url('../../assets/clipboard-7224416.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.598)">
+    <div class="d-flex justify-content-center h-100">
+      <div class="text-white px-6" style="width: 1250px;" >
+        <h1 class="mb-5 mt-4">More Templates Coming Soon!</h1>
+
+        <p style="text-align: left;font-size: large; line-height: 25px;">
+          Welcome to Resume-Builder - your  resume building solution! I am thrilled to introduce you to a tool designed to help you create professional resumes effortlessly.
+          At Resume-Builder,  you can craft captivating resumes that stand out in the competitive job market. I understand the importance of a well-crafted resume in landing your dream job, and that's why I've built this application to streamline the resume creation process and showcase your skills and experience effectively.
+        </p>
+       
+
+       
+      </div>
+      
+    </div>
+   <div class="d-flex justify-content-center  h-100" >
+    <div class="text-white px-6 mb-4"  >
+      <h1 class="mb-5 mt-4">KEY FEATURES</h1>
+      <p style="text-align: left; line-height: 25px; font-size: large; " class="mb-5" >
+        
+        <strong>Easy-to-Use Interface:</strong> Our user-centric design ensures a smooth and intuitive experience, making resume building a breeze for users of all levels. <br>
+       <strong> Customization Options:</strong> Tailor your resume to match your unique style and career goals with our extensive range of customizable templates and sections. <br>
+        <strong>Real-Time Preview:</strong> See your resume come to life as you build it with our real-time preview feature, giving you full control over the final result. <br>
+        <strong>One-Click Download:</strong> Once your resume is ready, download it in   PDF format with a single click and share it with potential employers. <br>
+      </p>
+      <a
+      class="btn btn-outline-light btn-lg m-2"
+      [routerLink]="'/login'"
+      role="button"
+      >Sign in</a
+    >
+    <a
+      class="btn btn-outline-light btn-lg m-2"
+      [routerLink]="'/signup'"
+      role="button"
+      >Sign up</a
+    >
+    </div>
+   </div>
+  </div>
+</div>
+<main class="mt-5">
+  <div class="container">
+    <section>
+      <div class="row">
+        <div class="col-md-6 mb-4 align-items-center">
+          <div>
+            <h3>
+              <strong
+                >Contribute for the development of this application.
+              </strong>
+            </h3>
+            <p class="text-muted">You can contribute to this application by:</p>
+            <div>
+              <mat-accordion>
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <fa-icon
+                        style="font-size: xx-large; color: rgb(9, 9, 168)"
+                        [icon]="faGooglePay"
+                      ></fa-icon>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Make payment by scanning QR code
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <div class="mb-4 align-items-center text-center">
+                    <img src="../../assets/Paytm QR.png" alt="" />
+                  </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <fa-icon
+                        style="font-size: xx-large; color: rgb(9, 9, 168)"
+                        [icon]="faPaypal"
+                      ></fa-icon>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Make payment using Paypal
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="mb-4 align-items-center text-center">
+                    <a
+                      href="https://www.paypal.me/mechatron2022"
+                      target="_blank"
+                    >
+                      <fa-icon
+                        style="font-size: 100px; color: rgb(9, 9, 168)"
+                        [icon]="faPaypal"
+                      ></fa-icon>
+                    </a>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 gx-5 mb-4">
+          <h4 class="mb-5 text-center"><strong>Message me</strong></h4>
+          <div class="row d-flex justify-content-center">
+            <form #contactForm="ngForm" (ngSubmit)="send(contactForm)">
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input
+                      #fname="ngModel"
+                      type="text"
+                      id="form3Example1"
+                      class="form-control"
+                      [(ngModel)]="contactsData.fname"
+                      name="fname"
+                      required
+                      minlength="3"
+                    />
+                    <label class="form-label" for="form3Example1"
+                      >First name</label
+                    >
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input
+                      #lname="ngModel"
+                      type="text"
+                      id="form3Example2"
+                      class="form-control"
+                      [(ngModel)]="contactsData.lname"
+                      name="lname"
+                      required
+                      minlength="3"
+                    />
+                    <label class="form-label" for="form3Example2"
+                      >Last name</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  id="form3Example3"
+                  class="form-control"
+                  #email="ngModel"
+                  [(ngModel)]="contactsData.email"
+                  name="email"
+                  required
+                  pattern="(^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$)"
+                />
+                <label class="form-label" for="form3Example3"
+                  >Email address</label
+                >
+                <div
+                  class="alert alert-danger"
+                  *ngIf="email.errors?.['pattern' || 'required']"
+                >
+                  Enter valid email!
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <textarea
+                  type="text"
+                  id="form3Example4"
+                  class="form-control"
+                  #message="ngModel"
+                  name="message"
+                  required
+                  [(ngModel)]="contactsData.message"
+                  minlength="50"
+                ></textarea>
+                <label class="form-label" for="form3Example4">Message</label>
+                <div
+                  class="alert alert-danger"
+                  *ngIf="message.dirty && message.errors?.['minlength']"
+                >
+                  Enter min 50 characters.
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  [disabled]="contactForm.invalid"
+                  type="submit"
+                  class="btn btn-primary btn-block mb-4 btn-lg"
+                >
+                  Send
+                </button>
+              </div>
+
+              <div *ngIf="successMessage !== ''">
+                <ngb-alert (closed)="(true)" [type]="'success'">{{
+                  successMessage
+                }}</ngb-alert>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="bg-light text-lg-start">
+  <hr class="m-0" />
+
+  <div class="text-center py-5 align-items-center">
+    <p>Follow me on social media</p>
+    <a
+      href="https://www.linkedin.com/in/dinesh-dixit"
+      class="m-1"
+      style="color: black; font-size: xx-large"
+      role="button"
+      rel="nofollow"
+      target="_blank"
+    >
+      <fa-icon [icon]="faLinkedin"></fa-icon>
+    </a>
+    <a
+      href="https://github.com/Mechatron00"
+      class="m-1"
+      role="button"
+      rel="nofollow"
+      target="_blank"
+      style="color: black; font-size: xx-large"
+    >
+      <fa-icon [icon]="faGithub"></fa-icon>
+    </a>
+    <a
+      href="https://www.instagram.com/mechatron2022/"
+      class="m-1"
+      role="button"
+      rel="nofollow"
+      target="_blank"
+      style="color: black; font-size: xx-large"
+    >
+      <fa-icon [icon]="faInstagram"></fa-icon>
+    </a>
+    <a
+      href="mailto:dixitdinesh52@gmail.com"
+      class="m-1"
+      role="button"
+      rel="nofollow"
+      target="_blank"
+      style="color: black; font-size: xx-large"
+    >
+      <fa-icon [icon]="faEmail"></fa-icon>
+    </a>
+    <a
+      href="https://mechatron-portfolio.web.app/"
+      class="m-1"
+      role="button"
+      rel="nofollow"
+      target="_blank"
+      style="color: black; font-size: xx-large"
+    >
+      <fa-icon [icon]="faWebsite"></fa-icon>
+    </a>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    ©Copyright:All Rights Reserve. @Dinesh Dixit
+    <a href="mailto:dixitdinesh52@gmail.com">(dixitdinesh52@gmail.com)</a>
+  </div>
+  <!-- Copyright -->
+</footer>
